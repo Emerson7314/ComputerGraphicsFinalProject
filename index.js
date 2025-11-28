@@ -1,7 +1,10 @@
 import * as THREE from './Three JS/build/three.module.js'
 import {OrbitControls} from './Three JS/examples/jsm/controls/OrbitControls.js'
 
+//2. Scene
 const scene = new THREE.Scene()
+
+//3. Camera
 const TPcamera = new THREE.PerspectiveCamera(
     75,
     window.innerWidth/window.innerHeight,
@@ -47,6 +50,8 @@ window.onresize = ()=>{
     FPcamera.updateProjectionMatrix()
 }
 
+
+//4. LIGHT
 const ambientLight = new THREE.AmbientLight('#ffffff', 0.7)
 const spotLight = new THREE.SpotLight('#ffffff', 1.2, 1000)
 spotLight.castShadow=true
@@ -64,4 +69,8 @@ pointLight.position.set(0,0.5,0)
 
 scene.add(ambientLight, spotLight, directionalLight, pointLight)
 
-//test 
+//5. OBJECTS
+function createGround(w,h,d){
+    const geo = new THREE.BoxGeometry(w,h,d)
+    const mat = new THREE.MeshStandardMaterial({color: '#ffffff'})
+}
