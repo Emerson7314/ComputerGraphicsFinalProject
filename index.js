@@ -1,6 +1,8 @@
 import * as THREE from './Three JS/build/three.module.js'
 import {OrbitControls} from './Three JS/examples/jsm/controls/OrbitControls.js'
 import {GLTFLoader} from './Three JS/examples/jsm/loaders/GLTFLoader.js'
+import { FontLoader } from './Three JS/examples/jsm/loaders/FontLoader.js'
+import { TextGeometry } from './Three JS/examples/jsm/geometries/TextGeometry.js'
 
 //2. Scene
 const scene = new THREE.Scene()
@@ -437,6 +439,33 @@ const tree2 = createTree(7, -6)
 const tree3 = createTree(-8, 8)
 
 scene.add(tree1, tree2, tree3)
+
+
+//TEKS
+const fontLoader =  new FontLoader();
+fontLoader.load('./Three JS/examples/fonts/helvetiker_bold.typeface.json', function (font) {
+    const textGeometry = new TextGeometry('OVerlord',{ 
+    font: font,   
+    size: 1,
+    height: 0.2,
+    depth: 1,
+    });
+
+    const textMaterial = new THREE.MeshStandardMaterial({ 
+    color: '#FFFFFF' 
+    });
+
+    const textMesh = new THREE.Mesh(textGeometry, textMaterial);
+  
+    textMesh.position.set(-6, 4, 5);
+    textMesh.rotation.set(0, Math.PI / 2, 0);
+    textMesh.castShadow = true;
+    textMesh.receiveShadow = true;
+
+    scene.add(textMesh);
+
+});
+
 
 //SKYBOX
 function loadSkybox(){
