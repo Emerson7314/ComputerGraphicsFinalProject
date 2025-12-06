@@ -443,7 +443,7 @@ scene.add(tree1, tree2, tree3)
 
 //TEKS
 const fontLoader =  new FontLoader();
-fontLoader.load('./Three JS/examples/fonts/helvetiker_bold.typeface.json', function (font) {
+fontLoader.load('../Three JS/examples/fonts/helvetiker_bold.typeface.json', function (font) {
     const textGeometry = new TextGeometry('OVerlord',{ 
     font: font,   
     size: 1,
