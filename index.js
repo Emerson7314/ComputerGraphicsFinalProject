@@ -232,9 +232,9 @@ function toggleHamsukeFace() {
 function createSpellCircle(){
     const spellCircle = new THREE.Group()
     const spellMaterial= new THREE.MeshPhongMaterial({
-        color: '#DAA520',
-        emmisive: 0xFFCC00,
-        emmisiveIntensity: 2,
+        color: 0xDAA520,
+        emissive: 0xFFCC00,
+        emissiveIntensity: 2,
         shininess: 100,
         transparent: true,
         opacity: 0.8,
@@ -471,12 +471,12 @@ fontLoader.load('../Three JS/examples/fonts/helvetiker_bold.typeface.json', func
 function loadSkybox(){
     const loader = new THREE.CubeTextureLoader()
     const skyboxTexture = loader.load([
-        './assets/skybox/bottom.png',
         './assets/skybox/side-1.png',
-        './assets/skybox/side-2.png',
-        './assets/skybox/side-3.png',
         './assets/skybox/side-4.png',
         './assets/skybox/top.png',
+        './assets/skybox/bottom.png',
+        './assets/skybox/side-3.png',
+        './assets/skybox/side-2.png',
     ])
     scene.background = skyboxTexture
 }
