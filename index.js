@@ -471,12 +471,12 @@ fontLoader.load('../Three JS/examples/fonts/helvetiker_bold.typeface.json', func
 function loadSkybox(){
     const loader = new THREE.CubeTextureLoader()
     const skyboxTexture = loader.load([
-        './assets/skybox/side-1.png',
-        './assets/skybox/side-4.png',
+        './assets/skybox/px.png',
+        './assets/skybox/nx.png',
         './assets/skybox/top.png',
         './assets/skybox/bottom.png',
-        './assets/skybox/side-3.png',
-        './assets/skybox/side-2.png',
+        './assets/skybox/pz.png',
+        './assets/skybox/nz.png',
     ])
     scene.background = skyboxTexture
 }
