@@ -1,3 +1,4 @@
+//1. Import
 import * as THREE from './Three JS/build/three.module.js'
 import {OrbitControls} from './Three JS/examples/jsm/controls/OrbitControls.js'
 import {GLTFLoader} from './Three JS/examples/jsm/loaders/GLTFLoader.js'
@@ -43,8 +44,6 @@ const textureLoader = new THREE.TextureLoader()
 const texture = textureLoader.load("./assets/textures/grass/rocky_terrain_02_diff_1k.jpg")
 const trunkTexture = textureLoader.load("./assets/textures/tree/chinese_cedar_bark_diff_1k.jpg")
 
-// const normalLoader = new THREE.TextureLoader()
-// const normal = normalLoader.load("./assets/textures/grass/rocky_terrain_02_diff_1k.jpg")
 
 function animate(){
     orbitControls.update()
@@ -65,14 +64,16 @@ window.onresize = ()=>{
 
 //4. LIGHT
 const ambientLight = new THREE.AmbientLight('#ffffff', 0.7)
+
 const spotLight = new THREE.SpotLight('#ffffff', 1.2, 1000)
 spotLight.castShadow=true
 spotLight.position.set(0,10,0)
 spotLight.shadow.mapSize.width = 2048
 spotLight.shadow.mapSize.height = 2048
-//map size width and height still don't know how to set
+
 const directionalLight = new THREE.DirectionalLight('#ffffee', 0.5)
 directionalLight.position.set(5,2,8)
+
 const pointLight = new THREE.PointLight('#ffd700', 2, 3)
 pointLight.position.set(0,0.5,0)
 //x and z relative to Dark Warrior's position (idk how to set this)
