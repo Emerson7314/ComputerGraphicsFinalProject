@@ -1,9 +1,9 @@
 //1. Import
-import * as THREE from './Three JS/build/three.module.js'
-import {OrbitControls} from './Three JS/examples/jsm/controls/OrbitControls.js'
-import {GLTFLoader} from './Three JS/examples/jsm/loaders/GLTFLoader.js'
-import { FontLoader } from './Three JS/examples/jsm/loaders/FontLoader.js'
-import { TextGeometry } from './Three JS/examples/jsm/geometries/TextGeometry.js'
+import * as THREE from './build/three.module.js'
+import {OrbitControls} from './examples/jsm/controls/OrbitControls.js'
+import {GLTFLoader} from './examples/jsm/loaders/GLTFLoader.js'
+import { FontLoader } from './examples/jsm/loaders/FontLoader.js'
+import { TextGeometry } from './examples/jsm/geometries/TextGeometry.js'
 
 //2. Scene
 const scene = new THREE.Scene()
@@ -444,7 +444,7 @@ scene.add(tree1, tree2, tree3)
 
 //TEKS
 const fontLoader =  new FontLoader();
-fontLoader.load('../Three JS/examples/fonts/helvetiker_bold.typeface.json', function (font) {
+fontLoader.load('./examples/fonts/helvetiker_bold.typeface.json', function (font) {
     const textGeometry = new TextGeometry('OVerlord',{ 
     font: font,   
     size: 1,
