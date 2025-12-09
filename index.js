@@ -76,9 +76,7 @@ directionalLight.position.set(5,2,8)
 
 const pointLight = new THREE.PointLight('#ffd700', 2, 3)
 pointLight.position.set(0,0.5,0)
-//x and z relative to Dark Warrior's position (idk how to set this)
-// Nanti di animate loop setelah Dark Warrior ada:
-// pointLight.position.set(darkWarrior.position.x, 0.5, darkWarrior.position.z)
+
 
 scene.add(ambientLight, spotLight, directionalLight, pointLight)
 
